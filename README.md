@@ -13,9 +13,13 @@ Una aplicación sencilla para organizar tareas, con una interfaz adaptable a cel
 
 ## Uso
 
-Abre `index.html` en un navegador moderno. No requiere instalación ni dependencias.
+Abre [ShipList](https://junevym.github.io/ShipList/) y empieza a organizar tus tareas. No necesitas instalar nada ni crear una cuenta.
 
-Las tareas se guardan en el navegador utilizado y no se sincronizan entre dispositivos. Si borras los datos del sitio, también se borran las tareas. El guardado al abrir archivos locales puede variar según el navegador.
+Las tareas se guardan automáticamente en tu navegador y no se sincronizan entre dispositivos. Si borras los datos del sitio, también se borrarán las tareas.
+
+### Ejecutar localmente
+
+También puedes descargar el repositorio y abrir `index.html` en un navegador moderno.
 
 ## Tecnologías
 
