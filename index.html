@@ -3,10 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Una lista de tareas sencilla para organizar tu día. Sin cuentas, con guardado en tu navegador.">
+  <meta name="description" content="Una lista de tareas sencilla para organizar tu día. Con guardado local y sincronización opcional.">
   <meta name="theme-color" content="#38654d">
   <title>ShipList · Tu lista de tareas</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .sync-card { margin-bottom: 16px; padding: 16px 20px; }
+    .sync-card summary { cursor: pointer; font-weight: 600; }
+    .sync-card form { display: flex; flex-wrap: wrap; padding: 12px 0 0; }
+    .sync-card label { display: grid; gap: 4px; flex: 1; min-width: 150px; font-size: 13px; }
+    .sync-card button { min-height: 40px; }
+    .sync-card p { font-size: 13px; margin-bottom: 0; }
+    #sync-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -18,6 +28,19 @@
         <h1 id="title">Plan it. Build it. Ship it<span>.</span></h1>
         <p>No tienes que hacerlo todo hoy. Empieza con algo pequeño.</p>
       </section>
+      <details class="card sync-card">
+        <summary>Sincronizar dispositivos</summary>
+        <form id="login-form">
+          <label>Correo <input name="email" type="email" autocomplete="username" required></label>
+          <label>Contraseña <input name="password" type="password" autocomplete="current-password" required></label>
+          <button class="add-button" type="submit">Iniciar sesión</button>
+        </form>
+        <div id="sync-actions" hidden>
+          <button type="button" id="import-tasks">Importar tareas de este navegador</button>
+          <button type="button" id="logout">Cerrar sesión</button>
+        </div>
+        <p id="sync-status" role="status">Inicia sesión con la misma cuenta en ambos dispositivos.</p>
+      </details>
       <section class="card" aria-label="Tu lista de tareas">
         <div class="card-heading"><div><h2>Mis tareas</h2><p id="summary" aria-live="polite">Tu día, a tu ritmo.</p></div><span class="badge" aria-hidden="true">✦</span></div>
         <form id="task-form">
