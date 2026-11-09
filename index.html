@@ -8,6 +8,14 @@
   <title>ShipList · Tu lista de tareas</title>
   <link rel="stylesheet" href="styles.css">
   <style>
+    #task-form { flex-wrap: wrap; }
+    .daily-option { flex-basis: 100%; display: flex; align-items: center; gap: 8px; font-size: 13px; }
+    .daily-option input { flex: none; accent-color: var(--green); }
+    .task-content { flex: 1; min-width: 0; }
+    .task-meta { display: block; font-size: 12px; color: #566c5c; margin: 4px 0 0 31px; }
+    .task-meta time { display: block; margin-top: 4px; }
+    .task-meta summary { cursor: pointer; }
+    .edit-task { border: 0; background: #eaf0e6; border-radius: 6px; padding: 7px; color: var(--green); font-size: 12px; }
     .sync-card { margin-bottom: 16px; padding: 16px 20px; }
     .sync-card summary { cursor: pointer; font-weight: 600; }
     .sync-card form { display: flex; flex-wrap: wrap; padding: 12px 0 0; }
@@ -47,6 +55,7 @@
           <label for="task-input" class="sr-only">Nueva tarea</label>
           <input id="task-input" maxlength="180" placeholder="¿Qué quieres hacer hoy?" autocomplete="off" required>
           <button class="add-button" type="submit"><span aria-hidden="true">＋</span> Agregar</button>
+          <label class="daily-option"><input id="daily-task" type="checkbox"> Repetir cada día</label>
         </form>
         <div class="toolbar"><div class="filters" role="group" aria-label="Filtrar tareas"><button type="button" data-filter="all" aria-pressed="true">Todas</button><button type="button" data-filter="pending" aria-pressed="false">Pendientes</button><button type="button" data-filter="done" aria-pressed="false">Hechas</button></div><button id="clear-done" class="clear" type="button" hidden>Limpiar hechas</button></div>
         <ul id="task-list" aria-label="Tareas"></ul>
