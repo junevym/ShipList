@@ -15,7 +15,7 @@ Una aplicación sencilla para organizar tareas, con una interfaz adaptable a cel
 
 Abre [ShipList](https://junevym.github.io/ShipList/) y empieza a organizar tus tareas. No necesitas instalar nada ni crear una cuenta.
 
-Las tareas se guardan automáticamente en tu navegador y no se sincronizan entre dispositivos. Si borras los datos del sitio, también se borrarán las tareas.
+Sin iniciar sesión, las tareas quedan en este navegador. Para ver la misma lista en tu celular y tu Mac, abre **Sincronizar dispositivos** e inicia sesión con la misma cuenta en ambos. Usa **Importar tareas de este navegador** para copiar tu lista local a la cuenta. Las tareas sincronizadas se guardan en Supabase y la lista se actualiza mientras está abierta.
 
 ### Ejecutar localmente
 
